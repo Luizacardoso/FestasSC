@@ -1,31 +1,40 @@
-package com.example.leon.floripapp;
+package domain;
 
 import java.io.Serializable;
 
 /**
- * Created by julia on 18/11/16.
+ * Created by luiza on 30/10/17.
  */
 
-public class PontoTuristico implements Serializable {
+public class Festa implements Serializable {
 
     private int id;
     private String nome;
     private String descricao;
     private boolean pago;
     private String dataFuncionamento;
-    private String horarioFuncionamento;
-    private boolean favorito;
+    private String valor;
+    private String video;
+    private String cidade;
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
     public void setPago(boolean pago) {
         this.pago = pago;
-    }
-
-    public boolean isFavorito() {
-        return favorito;
-    }
-
-    public void setFavorito(boolean favorito) {
-        this.favorito = favorito;
     }
 
     public int getId() {
@@ -64,12 +73,12 @@ public class PontoTuristico implements Serializable {
         this.dataFuncionamento = dataFuncionamento;
     }
 
-    public String getHorarioFuncionamento() {
-        return horarioFuncionamento;
+    public String getValor() {
+        return valor;
     }
 
-    public void setHorarioFuncionamento(String horarioFuncionamento) {
-        this.horarioFuncionamento = horarioFuncionamento;
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
     @Override

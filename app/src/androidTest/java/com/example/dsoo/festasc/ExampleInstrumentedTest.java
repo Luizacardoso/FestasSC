@@ -1,4 +1,4 @@
-package com.example.leon.floripapp;
+package com.example.leon.festasc;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
