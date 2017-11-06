@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Festa festa = (Festa)lista.getItemAtPosition(i);
-                Intent intent = new Intent(MainActivity.this,InformacoesActivity.class);
+                Festa festa = (Festa) lista.getItemAtPosition(i);
+                Intent intent = new Intent(MainActivity.this, InformacoesActivity.class);
                 intent.putExtra("festa", festa);
                 startActivity(intent);
             }
@@ -47,24 +47,20 @@ public class MainActivity extends AppCompatActivity {
         List<Festa> festas = dao.buscaFestas();
         dao.close();
 
-        ArrayAdapter<Festa> adapter = new ArrayAdapter<Festa>(this,android.R.layout.simple_list_item_1,festas);
+        ArrayAdapter<Festa> adapter = new ArrayAdapter<Festa>(this, android.R.layout.simple_list_item_1, festas);
         lista.setAdapter(adapter);
         return lista;
     }
 
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_informacoes_activity,menu);
+        getMenuInflater().inflate(R.menu.menu_informacoes_activity, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
-   @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-
+        switch (item.getItemId()) {
             case R.id.ordenaNome:
                 carregaLista();
                 break;

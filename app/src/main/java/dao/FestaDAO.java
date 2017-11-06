@@ -23,9 +23,9 @@ public class FestaDAO extends SQLiteOpenHelper {
         String sql = "CREATE TABLE Festas(id INTEGER PRIMARY KEY, nome TEXT NOT NULL, cidade TEXT, descricao TEXT, pago BOOLEAN, valor TEXT, dataFuncionamento TEXT, video TEXT);";
         sqLiteDatabase.execSQL(sql);
 
-        String insereDados = "INSERT INTO Festas VALUES (1, 'Oktoberfest', 'Rua Gentil Batistti Archer, 221 - centro II', 'A maior festa alemã da América do Sul, a Oktoberfest Blumenau conta com diversas atrações artísticas, musicais e culturais, desfiles temáticos e grande variedade em chopes e gastronomia típica', 1, '4 a 22 de Outubro', '14h - 00h', 'https://youtu.be/UM3ltNcJP84')," +
-                "(2, 'Fenaostra','Centrosul, Florianópolis', 'altux camarão gratinado', 0, '0', '11 a 16 de Outubro', 'youtube.com')," +
-                "(3, 'Fenareco', 'Blumenau,Santa Catarina','marrequinho', 0, '0', '12h-00h', 'youtube.com');";
+        String insereDados = "INSERT INTO Festas VALUES (1, 'Oktoberfest', 'Rua Gentil Batistti Archer, 221 - centro II', 'A maior festa alemã da América do Sul, a Oktoberfest Blumenau conta com diversas atrações artísticas, musicais e culturais, desfiles temáticos e grande variedade em chopes e gastronomia típica', 1, '4 a 22 de Outubro', '14h - 00h', 'A7dG3rNPmpg')," +
+                "(2, 'Fenaostra','Centrosul, Florianópolis', 'altux camarão gratinado', 0, '0', '11 a 16 de Outubro', '6U66xyARj_Q')," +
+                "(3, 'Fenarreco', 'Blumenau, Santa Catarina','marrequinho', 0, '0', '12h-00h', 'gc4Vl03gBTo');";
         sqLiteDatabase.execSQL(insereDados);
     }
 
@@ -59,8 +59,6 @@ public class FestaDAO extends SQLiteOpenHelper {
         return festas;
     }
 
-
-
     public void salvaAlteracao(Festa festa){
         SQLiteDatabase database = getWritableDatabase();
 
@@ -69,5 +67,4 @@ public class FestaDAO extends SQLiteOpenHelper {
         String[] params={String.valueOf(festa.getId())};
         database.update("Festas",values,"id = ?",params);
     }
-
 }
